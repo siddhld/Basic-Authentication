@@ -29,6 +29,7 @@ public class SecurityConfigStudent {
         .formLogin(Customizer.withDefaults())
         .userDetailsService(gUserDetailsService())
         .csrf(AbstractHttpConfigurer::disable);
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         return http.build();
     }
